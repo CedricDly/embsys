@@ -1,7 +1,7 @@
 #ifndef HANDLER_H
 #define HANDLER_H
 
-#include <shm_writer/shdata.h>
+#include <../shm_writer/shdata.h>
 #include <semaphore.h>
 
 #include <opts.h>

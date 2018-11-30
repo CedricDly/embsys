@@ -31,8 +31,27 @@ int hndopen(struct OPTS opts, struct HANDLERS *handlers)
     }
 
     // shared memory opening
-    // TODO
+    handlers->shm = opts.shm;
+    handlers->shmfd = shm_open(opts.shm, O_RDWR|O_CREAT, S_IRUSR|S_IWUSR);
 
+    if(handlers->shmfd == -1)
+    {
+        perror("shm_open");
+        goto err;
+    }
+
+    if(ftruncate(handlers->shmfd, sizeof(handlers->shdata)) != 0)
+    {
+        perror("ftruncate");
+        goto err;
+    }
+
+    handlers->shdata = mmap(NULL, sizeof(handlers->shdata), PROT_READ|PROT_WRITE, MAP_SHARED, handlers->shmfd, 0);
+    if(handlers->shdata == MAP_FAILED)
+    {
+        perror("mmap");
+        goto err;
+    }
     return 0;
 
 err:
