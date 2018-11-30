@@ -13,7 +13,7 @@ int main()
     while(pthread_create(&thread, NULL, function, NULL) == 0)
     {
         number_of_thread ++;
-        usleep(100000);
+        //usleep(100000);
     }
 
     printf("Number of threads: %d\n", number_of_thread);
