@@ -33,10 +33,16 @@ fermer  : close
 type de programmation : multiplexage
 
 
-Questions 5, 6 et 7
+Questions 5
 ============
 
 cf code
+
+
+Question 6 et 7
+=============
+
+L'affichage du PID du père se fait facielement. Néanmoins, pour l'affichage de la date, ainsi que l'écriture des logs dans un autre fichier, je pense qu'il faut modifier le fichier */etc/syslog.conf* et utiliser les bonnes options (ce que nous n'avons pas réussi à faire).
 
 
 

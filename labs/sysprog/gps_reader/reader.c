@@ -93,7 +93,7 @@ int main(int argc, char *argv [])
             {
                 printf("%s\n", buff);
                 fflush(stdout);
-                syslog(LOG_INFO,"ceci est une info 1\n");
+                syslog(LOG_INFO,"log venant du premier GPS\n");
             }
         }
 
@@ -105,7 +105,7 @@ int main(int argc, char *argv [])
             {
                 printf("%s\n", buff);
                 fflush(stdout);
-                syslog(LOG_INFO,"ceci est une info 2\n");
+                syslog(LOG_INFO,"log venant du second gps\n");
             }
         }
     }
